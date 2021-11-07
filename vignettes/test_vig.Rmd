@@ -1,0 +1,60 @@
+---
+title: "Mastering Software Development R - Week 4 Project"
+author: "Brandon"
+date: "2021-11-06"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{test_vig}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE)
+
+```
+
+## Introduction 
+
+The R package **TestPackage** is set a tools to allow users to analyze and visualize data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System. 
+
+The Fatality Analysis Reporting System is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+
+## Summarizing Functions
+The package contains one summary function that will take a vector of years as an argument, and return the total motor vehicle fatalities by month for those years.
+
+```{r echo=TRUE, warning=FALSE, include=TRUE}
+library(TestPackage)
+
+#get summary data for 2014
+sum_data <- TestPackage::fars_summarize_years(2014)
+
+```
+
+```{r echo=TRUE, include=TRUE}
+
+#print summary data
+sum_data
+
+```
+
+
+## Visualizing Functions
+The package contains one visualizatin functions that allows users to choose one state and one year and plot that location of each fatility that occured in the state on a map of the state. 
+
+```{r, echo=TRUE, include=TRUE}
+
+#plot fatality data by state/year
+fars_map_state(10, 2014)
+
+```
+
