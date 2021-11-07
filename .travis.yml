@@ -2,3 +2,5 @@
 
 language: R
 cache: packages
+script:
+- CI=false npm run build
