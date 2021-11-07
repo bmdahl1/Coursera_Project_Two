@@ -2,5 +2,4 @@
 
 language: R
 cache: packages
-script:
-- CI=false
+warnings_are_errors: false
